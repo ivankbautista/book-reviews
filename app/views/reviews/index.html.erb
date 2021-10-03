@@ -1,0 +1,11 @@
+<h1>Here are some Book Reviews</h1>
+
+<ul>
+    <% @reviews.each do |review| %>
+        <li>
+            <%= link_to review.title, review %>
+        </li>
+    <% end %>
+</ul>
+
+<%= link_to "New Book Review", new_review_path %>
