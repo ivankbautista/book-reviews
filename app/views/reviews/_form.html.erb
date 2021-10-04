@@ -9,7 +9,7 @@
 
     <div>
         <%= form.label :review %><br>
-        <%= form.text_area :review %><br>
+        <%= form.text_area :review, rows:5 %><br>
         <% review.errors.full_messages_for(:review).each do |message| %>
             <div><%= message %></div>
         <% end %>
