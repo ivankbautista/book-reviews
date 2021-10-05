@@ -1,21 +1,28 @@
-<%= form_with model: review do |form| %>
-    <div>
-        <%= form.label :title %><br>
-        <%= form.text_field :title %>
-        <% review.errors.full_messages_for(:title).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
+<div class="bg-gradient-to-b from-green-200 to-green-300 min-h-screen flex justify-center items-center">
+    <%= form_with model: review do |form| %>
+        <div class="flex flex-col items-center w-full">
+            <div class="p-12 bg-white mx-auto rounded-2xl w-100">
+                <h1 class="text-center font-bold mb-2">New Book Review</h1>
+                <div class="flex flex-col self-center mb-4">
+                    <%= form.label :title, class: "text-sm font-medium text-gray-700 tracking-wide"%><br>
+                    <%= form.text_field :title, class: "w-full text-base px-4 py-3 border border-gray-400 rounded-md"%>
+                    <% review.errors.full_messages_for(:title).each do |message| %>
+                        <div><%= message %></div>
+                    <% end %>
+                </div>
 
-    <div>
-        <%= form.label :review %><br>
-        <%= form.text_area :review, rows:5 %><br>
-        <% review.errors.full_messages_for(:review).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
+                <div class="flex flex-col self-center">
+                    <%= form.label :review, class: "text-sm font-medium text-gray-700 tracking-wide" %><br>
+                    <%= form.text_area :review, rows:5, class: "w-full text-base px-4 py-3 border border-gray-400 rounded-md" %><br>
+                    <% review.errors.full_messages_for(:review).each do |message| %>
+                        <div><%= message %></div>
+                    <% end %>
+                </div>
 
-    <div>
-        <%= form.submit %>
+                <div class="text-center">
+                    <%= form.submit "Write your book review!" %>
+                </div>
+            </div>
+        </div>
     </div>
 <% end %>
